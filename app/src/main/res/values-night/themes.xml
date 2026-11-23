@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Vaio" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/vaio_dark_background</item>
+    </style>
+</resources>

@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.ui.Alignment
@@ -17,10 +18,16 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+            val backgroundColor = if (isSystemInDarkTheme()) {
+                Color(0xFF121212)
+            } else {
+                Color.White
+            }
+
             Box(
                 modifier = Modifier
                     .fillMaxSize()
-                    .background(Color.White),
+                    .background(backgroundColor),
                 contentAlignment = Alignment.Center
             ) {
                 Image(
