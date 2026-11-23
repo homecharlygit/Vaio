@@ -36,7 +36,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             // Starts from the system theme; the switch can override it.
-            var darkMode by rememberSaveable { mutableStateOf(isSystemInDarkTheme()) }
+            val systemDarkMode = isSystemInDarkTheme()
+            var darkMode by rememberSaveable { mutableStateOf(systemDarkMode) }
 
             val backgroundColor = if (darkMode) Color(0xFF121212) else Color.White
 
